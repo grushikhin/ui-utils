@@ -155,7 +155,7 @@ angular.module('ui.mask', [])
             if (iAttrs.maxlength) { // Double maxlength to allow pasting new val at end of mask
               iElement.attr('maxlength', maskCaretMap[maskCaretMap.length - 1] * 2);
             }
-            iElement.attr('placeholder', maskPlaceholder);
+            //iElement.attr('placeholder', maskPlaceholder);
             iElement.val(viewValue);
             controller.$viewValue = viewValue;
             // Not using $setViewValue so we don't clobber the model value and dirty the form
@@ -226,13 +226,7 @@ angular.module('ui.mask', [])
           }
 
           function getPlaceholderChar(i) {
-            var placeholder = iAttrs.placeholder;
-
-            if (typeof placeholder !== 'undefined' && placeholder[i]) {
-              return placeholder[i];
-            } else {
               return '_';
-            }
           }
 
           // Generate array of mask components that will be stripped from a masked value
